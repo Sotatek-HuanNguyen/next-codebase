@@ -1,6 +1,11 @@
 {
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
-  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "react-hooks/rules-of-hooks": "error",
