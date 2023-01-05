@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegments } from 'next/navigation';
+import React from 'react';
 
 export default function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   const segment = useSelectedLayoutSegments();

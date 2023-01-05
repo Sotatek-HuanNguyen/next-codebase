@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './styles.module.scss';
-
-import { useAppSelector, useAppDispatch } from 'stores/hooks';
-import { appActions, selectCount } from '~/stores/app/appSlice';
 import { useDebouncedCallback } from '~/hooks/debounce';
+import { appActions, selectCount } from '~/stores/app/appSlice';
+import { useAppDispatch, useAppSelector } from '~/stores/hooks';
+
+import styles from './styles.module.scss';
 
 const Counter = () => {
   const count = useAppSelector(selectCount);

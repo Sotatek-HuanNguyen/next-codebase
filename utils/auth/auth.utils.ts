@@ -1,4 +1,5 @@
 import { ITokenInfo } from '~/interfaces';
+
 import localStorageHelper, { KeyStorage } from '../localStorage';
 
 export const getTokenInfo = async () => {

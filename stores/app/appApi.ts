@@ -1,5 +1,5 @@
 import { ResponseBase } from '~/utils/api/api.types';
-import ApiUtils from 'utils/api/api.utils';
+import ApiUtils from '~/utils/api/api.utils';
 
 const apiName = {
   demo: '/test',

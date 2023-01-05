@@ -1,11 +1,12 @@
-import { Action, configureStore, ThunkAction, Store } from '@reduxjs/toolkit';
-import createSagaMiddleware, { Task } from 'redux-saga';
+import { Action, Store, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import { persistStore, persistReducer, Persistor } from 'redux-persist';
+import { Persistor, persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import createSagaMiddleware, { Task } from 'redux-saga';
+
 import { mainConfig } from '../configs/main-config';
-import rootSaga from './root-saga';
 import rootReducer from './root-reducer';
+import rootSaga from './root-saga';
 
 export interface SagaStore extends Store {
   sagaTask: Task;

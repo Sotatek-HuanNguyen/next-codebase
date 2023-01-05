@@ -1,12 +1,26 @@
+import { Inter } from '@next/font/google';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
 import Counter from '~/components/Counter';
+import MainLayout from '~/layouts/MainLayout';
+
+import styles from '../styles/Home.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+function Home() {
+  const router = useRouter();
+  const { t } = useTranslation('common');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onToggleLanguageClick = (newLocale: string) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: newLocale });
+  };
+
+  const changeTo = router.locale === 'en' ? 'ja' : 'en';
   return (
     <>
       <Head>
@@ -53,6 +67,10 @@ export default function Home() {
             <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
           </div>
         </div>
+        <h1>{t('header.title')}</h1>
+        <button onClick={() => onToggleLanguageClick(changeTo)}>
+          {t('change-locale', { changeTo })}
+        </button>
         <Counter />
         <div className={styles.grid}>
           <a
@@ -115,3 +133,13 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale)),
+  },
+});
+
+Home.layout = MainLayout;
+
+export default Home;

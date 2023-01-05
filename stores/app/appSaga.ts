@@ -1,7 +1,8 @@
-import { put, takeEvery } from '@redux-saga/core/effects';
-import { PayloadAction } from '@reduxjs/toolkit';
 // import { call } from 'redux-saga/effects';
 // import { demoEffect } from './appApi';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { put, takeEvery } from 'redux-saga/effects';
+
 import { appActions } from './appSlice';
 
 function* handleIncrementSaga(action: PayloadAction<number>) {

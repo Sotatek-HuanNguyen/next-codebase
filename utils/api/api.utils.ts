@@ -1,11 +1,12 @@
-import { getTokenStatus } from './../auth/auth.utils';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, ResponseType } from 'axios';
-import { getTokenInfo, setTokenInfo } from '../auth/auth.utils';
-import { ResponseCode } from './api.types';
-import localStorageHelper, { KeyStorage } from '../localStorage';
 import { i18n } from 'next-i18next';
-import { trimObject } from '../common';
 import { ITokenInfo } from '~/interfaces';
+
+import { getTokenInfo, setTokenInfo } from '../auth/auth.utils';
+import { trimObject } from '../common';
+import localStorageHelper, { KeyStorage } from '../localStorage';
+import { getTokenStatus } from './../auth/auth.utils';
+import { ResponseCode } from './api.types';
 
 const needAuthUrl = ['/profile', '/logout'];
 

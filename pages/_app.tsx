@@ -1,15 +1,24 @@
-import { PersistGate } from 'redux-persist/integration/react';
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { ReduxStore, reduxWrapper } from '~/stores/store';
-import { useStore } from 'react-redux';
 import { appWithTranslation } from 'next-i18next';
+import type { AppProps } from 'next/app';
+import { Fragment } from 'react';
+import { useStore } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { ReduxStore, reduxWrapper } from '~/stores/store';
+import { Page } from '~/types/page';
 
-function App({ Component, pageProps }: AppProps) {
+import '../styles/globals.css';
+
+type Props = AppProps & {
+  Component: Page;
+};
+
+function App({ Component, pageProps }: Props) {
   const reduxStore = useStore();
+  const getLayout = Component.getLayout ?? ((page) => page);
+  const Layout = Component.layout ?? Fragment;
   return (
     <PersistGate loading={null} persistor={(reduxStore as ReduxStore).reduxPersistData}>
-      {() => <Component {...pageProps} />}
+      {() => <Layout>{getLayout(<Component {...pageProps} />)}</Layout>}
     </PersistGate>
   );
 }
