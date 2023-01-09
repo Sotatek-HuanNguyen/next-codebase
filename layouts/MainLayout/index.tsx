@@ -1,21 +1,11 @@
-import Link from 'next/link';
 import React from 'react';
+import MainMenu from '~/components/AppMenu';
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section>
       {/* Include shared UI here e.g. a header or sidebar */}
-      <nav>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/login">login</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <MainMenu />
       {children}
     </section>
   );

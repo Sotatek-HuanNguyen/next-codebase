@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
 
-import app from './app/appSlice';
-
-// import counters from '../pages/counter/counterSlice';
-// red
+import app from './app/app.slice';
 
 const rootReducer = combineReducers({
   app,
-  // counters,
 });
 
 export default rootReducer;

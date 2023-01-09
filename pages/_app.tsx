@@ -3,10 +3,9 @@ import type { AppProps } from 'next/app';
 import { Fragment } from 'react';
 import { useStore } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import '~/assets/styles/styles.scss';
 import { ReduxStore, reduxWrapper } from '~/stores/store';
 import { Page } from '~/types/page';
-
-import '../styles/globals.css';
 
 type Props = AppProps & {
   Component: Page;

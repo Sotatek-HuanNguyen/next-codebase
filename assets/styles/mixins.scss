@@ -1,0 +1,54 @@
+@mixin Responsive($canvas) {
+  @if $canvas ==XS {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $canvas ==SM {
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $canvas ==MD {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $canvas ==LG {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $canvas ==XL {
+    @media (min-width: 1200px) and (max-width: 1599.98px) {
+      @content;
+    }
+  } @else if $canvas ==XXL {
+    @media (min-width: 1600px) and (max-width: 1759.98px) {
+      @content;
+    }
+  } @else if $canvas ==XXXL {
+    @media (min-width: 1760px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($display: flex, $x: center, $y: center) {
+  display: $display;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin flexX($x: center) {
+  display: flex;
+  justify-content: $x;
+}
+
+@mixin flexY($y: center) {
+  display: flex;
+  align-items: $y;
+}
+
+@mixin flexColumn($display: flex, $direction: column, $x: null, $y: null) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $x;
+  align-items: $y;
+}

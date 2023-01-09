@@ -1,6 +1,5 @@
 import React from 'react';
-import { useDebouncedCallback } from '~/hooks/debounce';
-import { appActions, selectCount } from '~/stores/app/appSlice';
+import { appActions, selectCount } from '~/stores/app/app.slice';
 import { useAppDispatch, useAppSelector } from '~/stores/hooks';
 
 import styles from './styles.module.scss';
@@ -9,7 +8,7 @@ const Counter = () => {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
 
-  const handleIncrement = useDebouncedCallback(() => dispatch(appActions.increment(2)), 1000);
+  const handleIncrement = () => dispatch(appActions.increment(2));
 
   return (
     <div>

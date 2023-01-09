@@ -3,7 +3,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { appActions } from './appSlice';
+import { appActions } from './app.slice';
 
 function* handleIncrementSaga(action: PayloadAction<number>) {
   try {
