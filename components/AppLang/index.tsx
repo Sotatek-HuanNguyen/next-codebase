@@ -11,7 +11,11 @@ const AppLang = () => {
 
   return (
     <div>
-      <select onChange={(e) => onToggleLanguageClick(e.target.value)}>
+      <select
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+          onToggleLanguageClick(e.target.value)
+        }
+      >
         {router?.locales?.map((lang, i) => (
           <option key={i} value={lang}>
             {lang.toUpperCase()}
