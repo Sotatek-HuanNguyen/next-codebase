@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { useStore } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import '~/assets/styles/styles.scss';
+import SocketContextComponent from '~/contexts/socketContextComponent';
 import { ReduxStore, reduxWrapper } from '~/stores/store';
 import { Page } from '~/types/page';
 
@@ -17,7 +18,11 @@ function App({ Component, pageProps }: Props) {
   const Layout = Component.layout ?? Fragment;
   return (
     <PersistGate loading={null} persistor={(reduxStore as ReduxStore).reduxPersistData}>
-      {() => <Layout>{getLayout(<Component {...pageProps} />)}</Layout>}
+      {() => (
+        <SocketContextComponent>
+          <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+        </SocketContextComponent>
+      )}
     </PersistGate>
   );
 }
