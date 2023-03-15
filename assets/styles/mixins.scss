@@ -3,27 +3,27 @@
     @media (max-width: 575.98px) {
       @content;
     }
-  } @else if $canvas ==SM {
+  } @else if $canvas == SM {
     @media (min-width: 576px) and (max-width: 767.98px) {
       @content;
     }
-  } @else if $canvas ==MD {
+  } @else if $canvas == MD {
     @media (min-width: 768px) and (max-width: 991.98px) {
       @content;
     }
-  } @else if $canvas ==LG {
+  } @else if $canvas == LG {
     @media (min-width: 992px) and (max-width: 1199.98px) {
       @content;
     }
-  } @else if $canvas ==XL {
+  } @else if $canvas == XL {
     @media (min-width: 1200px) and (max-width: 1599.98px) {
       @content;
     }
-  } @else if $canvas ==XXL {
+  } @else if $canvas == XXL {
     @media (min-width: 1600px) and (max-width: 1759.98px) {
       @content;
     }
-  } @else if $canvas ==XXXL {
+  } @else if $canvas == XXXL {
     @media (min-width: 1760px) {
       @content;
     }

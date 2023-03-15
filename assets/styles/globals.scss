@@ -82,8 +82,13 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: var(--font-mono);
+  font-size: 1.6rem;
   color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))

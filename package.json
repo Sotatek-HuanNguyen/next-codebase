@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint . --ext .ts,.tsx,.js && stylelint '**/*.css'",
+    "lint": "next lint",
+    "lint:check": "eslint . --ext ts --ext tsx --ext js",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --fix && stylelint '**/*.css' --fix",
+    "prettier": "prettier --check \"(*.tsx|*.ts|*.css|*.scss)\"",
+    "prettier:fix": "prettier --write \"(*.tsx|*.ts|*.css|*.scss)\"",
     "prepare": "husky install"
   },
   "dependencies": {

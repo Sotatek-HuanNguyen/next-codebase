@@ -4,6 +4,7 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:prettier/recommended",
+    "eslint-config-prettier",
     "prettier"
   ],
   "rules": {
