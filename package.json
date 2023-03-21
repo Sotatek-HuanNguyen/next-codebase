@@ -33,6 +33,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.41.5",
     "react-i18next": "^12.1.1",
+    "react-infinite-scroll-hook": "^4.1.1",
     "react-redux": "^8.0.5",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.2",
